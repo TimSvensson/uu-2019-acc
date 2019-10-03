@@ -1,0 +1,24 @@
+
+This file will contain all notes taken during the course "Applied Cloud
+Computing, 5.0 hp" at Uppsala University.
+
+* Applied Cloud Computing, 10.0 hp
+** Lectures
+** Labs
+** Seminar
+*** Articles from Student Portal
+**** Computing and its Role in the Internet of Things (p13-bonomi.pdf)
+    
+    The article argues that a new compute paradigm should be created, called Fog
+    Computing, that shall solve issues that currently are present in Cloud
+    Computing. The Fog shall provide localized, geographically aware,
+    low-latency networking for devices that require such things.
+
+    In short, the Fog will be a low-latency layer between a end-user, or device,
+    and the cloud.
+
+**** MapReduce: Simplified Data Processing on Large Clusters (googlemapreduce.pdf)
+
+    .
+
+** Project
