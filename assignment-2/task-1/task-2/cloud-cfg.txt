@@ -1,0 +1,36 @@
+#cloud-config
+
+apt_update: true
+apt_upgrade: true
+packages:
+ - cowsay
+ - python-pip
+ - python-dev
+ - build-essential
+ - cowsay
+byobu_default: system
+
+# add each entry to ~/.ssh/authorized_keys for the configured user or the
+# first user defined in the user definition directive.
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdVFNBc9d3F52ooXOQrBV51dzpye6SNDiP/bRrbgnqXfRbSSQFcotdB0JwJzhXI8mFbXZLu+fjcY6fz833sM+oQLM8LNdQSPcddbUUgXuXVrbm2Sx5KT6Zj6FRtlhPt64fwdKbFi0sMdNCJbzF8nYaAueykaLccePMk3t6TfixdGWTuKSLl84IOct3Lx6X+nklYb+oLSwVDkH8g6va8aFbhv01lp8xNWZoRWZcaTWGpsaqkxQ7txD9iz3T/VeKpDB36VKdXD5Y2cA2kFOuXJNgJToaOOHC4ADS6INO6wYgRoGVi3Aw3m88kxwf5raDvFR5EWhQUVC0a5U6HquiALHT tim@student-213-27.eduroam.uu.se
+
+write_files:
+  - path: /home/ubuntu/cowsay-app.py
+    content: |
+      from flask import Flask, jsonify
+      import subprocess
+      import sys
+      app = Flask(__name__)
+      @app.route('/cowsay/api/v1.0/saysomething', methods=['GET'])
+      def cow_say():
+          data=subprocess.check_output(["/usr/games/cowsay","Hello student"])
+          return data
+      if __name__ == '__main__':
+          app.run(host='0.0.0.0',debug=True)
+
+runcmd:
+ - echo "export PATH=$PATH:/usr/games" >> /home/ubuntu/.bashrc  
+ - source /home/ubuntu/.bashrc
+ - pip install Flask
+ - python /home/ubuntu/cowsay-app.py & 
