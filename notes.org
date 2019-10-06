@@ -25,8 +25,104 @@ Computing, 5.0 hp" at Uppsala University.
     + Kubernetes
 
 *** Articles from Student Portal
-**** DONE p13-bonomi.pdf
+**** DONE [#C] CeleryIPythonMpi4py.pdf
+
+    == The Scaling of Many-Task Computing Approaches in Python ==
+    ==               on Cluster Supercomputers                 ==
+
+    Python, in general, is a good way of running Many-Task Computing (MTC) jobs,
+    and the Python libraries IPython and Celery are two good libraries to use
+    when constructing MTC clusters.
+
+**** DONE [#C] CloudElasticityElmroth.pdf
+
+    == An Adaptive Hybrid Elasticity Controller for Cloud Infrastructures ==
+
+    The paper shows that the algorithm developed by the authors is better at
+    handling horizontal scaling of cloud platforms and demonstrate that it will
+    decrease the likelihood of cloud providers violating the service-level
+    agreement (SLA).
+
+**** DONE [#A] CloudKon.pdf
+
+    == Achieving Efficient Distributed Scheduling with Message Queues in the ==
+    ==     Cloud for Many-Task Computing and High-Performance Computing      ==
+
+    CloudKon is a light-weight job management system and scaler for cloud based
+    programs. It is better than other state-of-the-art job management systems
+    while being significantly smaller.
+
+    CloudKon is built upon cloud computing building blocks, such as Amazon EC2,
+    SQS, and DynamoDB.
+
+    This paper describes the problems with current solutions and a possible
+    better solution, past problems and their solution, and a proposed solution
+    to possible future problems.
+
+**** DONE [#B] CloudSensing.pdf
+
+    == Cloud Computing for Internet of Things & Sensing Based Applications ==
+
+    This paper describes what IoT is and how it can benefit from different kinds
+    of Cloud Services that exists. It also mentions Ubiqiou Computing.
     
+**** TODO [#A] googlemapreduce.pdf
+
+    == MapReduce: Simplified Data Processing on Large Clusters ==
+
+    MapReduce := reduce( [ map(key, val) ] )
+    MapReduce : [(key, val)] --> [(key, val)]
+
+    map : (key, value) --> (key, value)
+
+    reduce : [(key, value)] --> (key, value)
+
+**** DONE [#B] GreenCloud.pdf
+
+    == Green Cloud Computing: ==
+    == Balancing Energy in Processing, Storage, and Transport ==
+
+    This paper analyses the power used by cloud computing and suggests ways to
+    decrease the power needed to perform computations, look-ups, transmitions,
+    etc.
+
+**** DONE [#C] GreenCloudModelDriven.pdf
+
+    == Model-driven auto-scaling of green cloud computing infrastructure ==
+
+    This paper discusses different methods of auto-scaling of a cloud service
+    and how it affects the power usages of said cloud service. It also presents
+    a model-driven engineering approach to optimizing the configuration, energy
+    consumption, and operating cost of cloud auto-scaling infrastructure.
+
+**** DONE [#A] IoTSurvey.pdf
+
+    == Internet of Things (IoT): A vision, architectural elements, and future
+    directions ==
+
+    This paper describes the current state of both IoT and Cloud Computing, what
+    technologies have made it possible, a projection of what will happen as we
+    move from traditional web-queries towards web3, and finally presents a cloud
+    centric vision of the future with an implementation of Aneka.
+
+    "Smart connectivity and context aware computing."
+
+**** DONE [#B] MegaPython.pdf
+
+    This paper discusses the problems with deploying cloud services using Python
+    and R on large-scale production systems, and then presents a solution based
+    on Swift.
+
+**** DONE [#A] NIST.pdf
+
+    == The NIST Definition of Cloud Computing ==
+
+    This document defines what Cloud Computing is.
+
+**** DONE [#C] p13-bonomi.pdf
+    
+    == Fog Computing and Its Role in the Internet of Things ==
+
     The article argues that a new compute paradigm should be created, called Fog
     Computing, that shall solve issues that currently are present in Cloud
     Computing. The Fog shall provide localized, geographically aware,
@@ -35,30 +131,5 @@ Computing, 5.0 hp" at Uppsala University.
     In short, the Fog will be a low-latency layer between a end-user, or device,
     and the cloud.
 
-**** TODO googlemapreduce.pdf
-
-    MapReduce := reduce( [ map(key, val) ] )
-    MapReduce : [(key, val)] --> [(key, val)]
-
-    map : (key, value) --> (key, value)
-
-    reduce : [(key, value)] --> (key, value)
-    
-**** DONE CeleryIPythonMpi4py.pdf
-
-    Python, in general, is a good way of running Many-Task Computing (MTC) jobs,
-    and the Python libraries IPython and Celery are two good libraries to use
-    when constructing MTC clusters.
-
-**** DONE CloudElasticityElmroth.pdf
-
-    The paper shows that the algorithm developed by the authors is better at
-    handling horizontal scaling of cloud platforms and demonstrate that it will
-    decrease the likelihood of cloud providers violating the service-level
-    agreement (SLA).
-
-**** TODO CloudKon.pdf
-
-    
 
 ** Project
