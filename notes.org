@@ -15,14 +15,30 @@ Computing, 5.0 hp" at Uppsala University.
     some logical progression in a seemingly fragmented ecosystem?
 
     + OpenStack
+      + Open-Source IaaS, founded 2010.
     + Rackspace
+      + American Cloud Computing company, founded 1998.
     + Eucalyptus
+      + Paid and open-source software for building Amazon Web Services
+        compatible private and hybrid cloud computing environments,
+        founded 2008.
     + Amazon EC2
+      + 
     + Google App Engine
     + Cloud Foundry
     + OpenShift
     + Mesos
     + Kubernetes
+
+    + 2005 Mesos
+    + 2006 Amazon EC2
+    + 2008 RackSpace
+    + 2008 Eucalyptus
+    + 2008 Google App Engine
+    + 2010 OpenStack
+    + 2011 Cloud Foundry
+    + 2011 OpenShift
+    + 2014 Kubernetes
 
 *** Articles from Student Portal
 **** DONE [#C] CeleryIPythonMpi4py.pdf
