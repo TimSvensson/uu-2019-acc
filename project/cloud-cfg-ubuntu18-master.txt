@@ -1,0 +1,39 @@
+#cloud-config
+
+apt_update: true
+apt_upgrade: true
+
+packages:
+ - build-essential
+ - python3-dev
+ - python3-pip
+
+byobu_default: system
+
+# add each entry to ~/.ssh/authorized_keys for the configured user or the
+# first user defined in the user definition directive.
+ssh_authorized_keys:
+ - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEyR8OwjwtjLTJzs8jRPVpoHJ1RcDXYaYgHSurX3MPO5lh+wCwy1fPyoOPagRglZUe11MMflD/s6YIjmjHXWto/I7nIIb+EtiF5RLFtsiVYU1kNP2lDaBImKvl8M4AwoWGv+dUZGCx71oZjmZCjShXi8X21xUxX6qAflhTksMFjDJe2+mCfyhYPuwgxV/6vagjhR1B5gn5dmvLULvXXzPzSXwVoaaF+hz/Yclez/RgOFGnpLvjj2smC1mwAibb6q3TxBKjCsi9rLJysPKeqnK1WfQzt5Nndd6VYe2H92TsBhkCXenJwKSVOByNiXk7ZX1EX2CbEGGDyICRLxOXbQ5/
+
+runcmd:
+ - pip3 install flask
+ - pip3 install numpy
+ - sudo apt-get install python-numpy
+ - pip3 install "celery[librabbitmq]"
+ - sudo apt install -y rabbitmq-server
+ - sudo rabbitmqctl add_user myuser mypassword
+ - sudo rabbitmqctl add_vhost myvhost
+ - sudo rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"
+ - sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+ - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+ - sudo apt-get update -y
+ - sudo apt-cache policy docker-ce
+ - sudo apt-get install -y docker-ce
+ - sudo docker run -td -v $(pwd):/home/fenics/shared -w /home/fenics/shared quay.io/fenicsproject/stable:current
+ - git clone https://github.com/TimSvensson/uu-acc2019-airfoil.git /root/uu-acc-airfoil/
+ - tar -xf /root/uu-acc-airfoil/murtazo.tar.gz
+ - tar -zxf /root/uu-acc-airfoil/murtazo/cloudnaca.tgz
+ - curl https://people.sc.fsu.edu/~jburkardt/py_src/dolfin-convert/dolfin-convert.py -o /root/uu-acc-airfoil/murtazo/cloudnaca/dolfin-convert.py
+ - apt-get update
+ - apt-get install gmsh
+ - 
