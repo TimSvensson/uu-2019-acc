@@ -36,4 +36,3 @@ runcmd:
  - curl https://people.sc.fsu.edu/~jburkardt/py_src/dolfin-convert/dolfin-convert.py -o /root/uu-acc-airfoil/murtazo/cloudnaca/dolfin-convert.py
  - apt-get update
  - apt-get install gmsh
- - 
