@@ -40,15 +40,15 @@ if private_net != None:
 else:
     sys.exit("private-net not defined.")
 
-#print("Path at terminal when executing this file")
-#print(os.getcwd() + "\n")
+print("Path at terminal when executing this file")
+print(os.getcwd() + "\n")
 cfg_file_path =  os.getcwd()+'/cloud-cfg.txt'
 if os.path.isfile(cfg_file_path):
     userdata = open(cfg_file_path)
 else:
     sys.exit("cloud-cfg.txt is not in current working directory")
 
-secgroups = ['tisv1227']
+secgroups = ['default'. 'tisv1227']
 
 print("Creating instance ... ")
 instance = nova.servers.create(
@@ -57,7 +57,8 @@ instance = nova.servers.create(
     flavor=flavor,
     userdata=userdata,
     nics=nics,
-    security_groups=secgroups)
+    security_groups=secgroups,
+    key_name="tisv1227-ssh-key")
 
 inst_status = instance.status
 print("waiting for 10 seconds.. ")

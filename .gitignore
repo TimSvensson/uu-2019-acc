@@ -5,3 +5,7 @@ tweets/
 __pycache__/
 out.json
 *.pyc
+#*#
+#*
+*#
+.#*

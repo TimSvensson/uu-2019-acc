@@ -2,10 +2,11 @@
 
 apt_update: true
 apt_upgrade: true
+
 packages:
+ - build-essential
  - python3-dev
  - python3-pip
- - build-essential
 
 byobu_default: system
 
@@ -17,5 +18,11 @@ ssh_authorized_keys:
 #write_files:
 
 runcmd:
- - pip3 install Flask
- - pip3 install Celery
+ - sudo apt-get update -y
+ - pip3 install flask
+ - pip3 install celery
+ - pip3 install "celery[librabbitmq]"
+ - sudo apt install -y rabbitmq-server
+ - sudo rabbitmqctl add_user myuser mypassword
+ - sudo rabbitmqctl add_vhost myvhost
+ - sudo rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"
